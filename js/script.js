@@ -82,3 +82,47 @@ form.addEventListener('submit', (e) => {
     .catch(error => console.error('Error!', error.message))
 })
 */
+
+function cricket() {
+  window.location.href = 'https://forms.gle/znG43FZZqUQ46ESQ8'; // Replace 'your_form_id' with the actual ID of your Google Form
+}
+
+function football() {
+  window.location.href = 'https://forms.gle/JLxVFRvqaKGgQgkM9'; // Replace 'your_form_id' with the actual ID of your Google Form
+}
+
+function chess() {
+  window.location.href = 'https://forms.gle/znG43FZZqUQ46ESQ8'; // Replace 'your_form_id' with the actual ID of your Google Form
+}
+
+function badminton() {
+  window.location.href = 'https://forms.gle/Y3iAWRhtMRhbQ4CF7'; // Replace 'your_form_id' with the actual ID of your Google Form
+}
+
+function volleyball() {
+  window.location.href = 'https://forms.gle/znG43FZZqUQ46ESQ8'; // Replace 'your_form_id' with the actual ID of your Google Form
+}
+
+function tabletennis() {
+  window.location.href = 'https://forms.gle/PQQFc6eKvb93HEyc7'; // Replace 'your_form_id' with the actual ID of your Google Form
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  fetch('http://localhost:3000/sponsors')
+.then((response) => response.json())
+.then((sponsors) => {
+const sponsorListDiv = document.getElementById('sponsorList');
+// Iterate over sponsors and append them to the sponsorListDiv
+sponsors.forEach((sponsor) => {
+const img = document.createElement('img');
+img.src = sponsor.image;
+console.log(sponsor.image);
+img.alt = sponsor.name;
+img.referrerPolicy="no-referrer";
+sponsorListDiv.appendChild(img);
+});
+})
+.catch((error) => console.error('Error fetching sponsors:', error));
+});
+
